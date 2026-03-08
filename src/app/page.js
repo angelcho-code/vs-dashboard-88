@@ -119,9 +119,9 @@ export default function App() {
   const products = useMemo(() => ['All Products', ...new Set(data.map(i => i.product))], [data]);
 
   const generateAIInsights = async () => {
-    const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
+    const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
     if (!apiKey || apiKey === "your_api_key_here") {
-      alert("Please configure your Gemini API Key.");
+      alert("AI Key missing. Please set NEXT_PUBLIC_GEMINI_API_KEY in environment variables.");
       return;
     }
     setAiLoading(true);
