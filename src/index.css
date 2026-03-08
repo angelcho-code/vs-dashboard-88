@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-dashboard: #f9fafb;
+  --bg-card: #ffffff;
+  --bg-table-header: #fcfcfc;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --text-title: #0f172a;
+  --border-color: #f3f4f6;
+}
+
+.dark {
+  --bg-dashboard: #040507;
+  --bg-card: #0d0f14;
+  --bg-table-header: #151921;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-title: #ffffff;
+  --border-color: #1e293b;
+}
+
+@layer base {
+  body {
+    @apply transition-colors duration-300;
+    background-color: var(--bg-dashboard);
+    color: var(--text-main);
+  }
+}
+
+.dashboard-card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+
+.dashboard-table-header {
+  background-color: var(--bg-table-header);
+  color: var(--text-muted);
+}
+
+.dashboard-title {
+  color: var(--text-title);
+}
+
+.dashboard-text-muted {
+  color: var(--text-muted);
+}
+
+@keyframes slideInFromBottom {
+  0% { transform: translateY(1rem); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-in {
+  animation: slideInFromBottom 0.5s ease-out forwards;
+}
+
